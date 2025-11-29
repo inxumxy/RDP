@@ -31,8 +31,9 @@ jobs:
 
       - name: Create RDP User with Secure Password
         run: |
-          # Set specific password and username as requested
-          $password = "Aiko@12345"
+          # Windows parolda username qatnashishiga ruxsat bermaydi. 
+          # Shuning uchun "Aiko" o'rniga "A1ko" (1 bilan) ishlatildi.
+          $password = "A1ko@12345" 
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
           
           # Create User "Aiko"
@@ -93,7 +94,7 @@ jobs:
           Write-Host "`n=== RDP ACCESS ==="
           Write-Host "Address: $env:TAILSCALE_IP"
           Write-Host "Username: Aiko"
-          Write-Host "Password: Aiko@12345"
+          Write-Host "Password: A1ko@12345"
           Write-Host "==================`n"
           
           # Keep runner active indefinitely (or until manually cancelled)
